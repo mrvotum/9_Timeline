@@ -64,9 +64,7 @@ export default class CreatePost {
     ulEl.insertBefore(liEl, ulEl.lastChild);
 
     const media = this.tasksHolder.querySelector(`[data-id=media_${this.postId}]`);
-    console.log(this.postId);
     this.mediaData.style.opacity = 1;
-    console.log(media);
     media.appendChild(this.mediaData);
 
 
@@ -74,6 +72,5 @@ export default class CreatePost {
     textarea.value = '';
 
     this.postId += 1;
-    console.log(this.postId);
   }
 }

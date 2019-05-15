@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import ValidateForm from './ValidateForm';
 import CreatePost from './createPost';
 
@@ -13,17 +14,14 @@ export default class Geoposition {
 
   create() {
     if (navigator.geolocation) {
-      console.log('geoposition . . .');
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log(position);
-          const { latitude, longitude, accuracy } = position.coords;
+          const { latitude, longitude } = position.coords;
           this.positionByGeo = `[${latitude.toFixed(5)}, ${longitude.toFixed(5)}]`;
-          console.log(`${latitude}, ${longitude}, ${accuracy}`);
           console.log('нет ошибок');
           const createPost = new CreatePost(this.tasksHolder, this.positionByGeo, this.postText, this.media, this.mediaData);
           createPost.create();
-        }, (error) => {
+        }, () => {
           this.addErrorMessage();
           console.log('да, есть ошибка');
         },
@@ -73,7 +71,6 @@ export default class Geoposition {
         this.field = document.querySelector('[data-id=describeField]');
         // геопозиция, которую ввёл пользователь
         this.positionByUser = this.field.value;
-        console.log(this.positionByUser);
         form.remove();
 
         const createPost = new CreatePost(this.tasksHolder, this.positionByUser, this.postText, this.media, this.mediaData);

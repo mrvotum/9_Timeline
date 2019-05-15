@@ -81,8 +81,6 @@ export default class PostsList {
 
     textarea.addEventListener('keydown', (event) => {
       if (event.keyCode === 13) {
-        console.log('это был enter, значит создаём пост');
-
         const postText = textarea.value;
 
         const geoposition = new Geoposition(this.tasksHolder, postText);
@@ -99,7 +97,6 @@ export default class PostsList {
       this.cam.style.transform = 'translateX(100vw)';
       const audioRec = new AudioRec(this.tasksHolder, this.mic, this.cam);
       audioRec.create();
-      console.log('microphone');
     });
 
     cam.addEventListener('click', (event) => {
@@ -108,7 +105,6 @@ export default class PostsList {
       this.cam.style.transform = 'translateX(100vw)';
       const videoRec = new VideoRec(this.tasksHolder, this.mic, this.cam);
       videoRec.create();
-      console.log('camera');
     });
   }
 }
