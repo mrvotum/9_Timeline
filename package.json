@@ -1,7 +1,7 @@
 {
-  "name": "8_Animation",
+  "name": "9_Timeline",
   "version": "1.0.0",
-  "description": "8 lesson, 1-3 tasks",
+  "description": "9 lesson, 1-3 tasks",
   "main": "index.js",
   "scripts": {
     "test": "jest --passWithNoTests",
@@ -10,7 +10,7 @@
     "doc": "jsdoc -c jsdoc.conf.json",
     "start": "webpack-dev-server --mode development"
   },
-  "repository": "https://github.com/mrvotum/8_Animation",
+  "repository": "https://github.com/mrvotum/9_Timeline",
   "author": "Vladimir",
   "license": "MIT",
   "devDependencies": {
